@@ -14,7 +14,7 @@ class docTR(AddOn):
         model = ocr_predictor(pretrained=True)
         for document in self.get_documents():
             pdf_name = f"'{document.title}.pdf'"
-            with open(f"{document.slug} - {document.id}.pdf", "w") as pdf:
+            with open(f"{document.slug} - {document.id}.pdf", "wb") as pdf:
                 pdf.write(document.pdf)
                 doc = DocumentFile.from_pdf(pdf_name)
                 result = model(doc)
