@@ -3,7 +3,7 @@ description: An Add-On that uses the open source [docTR](https://github.com/mind
 type: object
 documents:
   - selected
-properties: []
+properties: {}
 categories: 
   - extraction
 # Acceptable categories are premium, ai, export, bulk, file,  monitor, statistical, and extraction. 
