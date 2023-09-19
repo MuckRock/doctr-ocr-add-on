@@ -3,7 +3,8 @@ This is an Add-On that uses docTR https://github.com/mindee/doctr to OCR documen
 """
 
 from documentcloud.addon import AddOn
-
+from doctr.io import DocumentFile
+from doctr.models import ocr_predictor
 
 class docTR(AddOn):
     """Class definition"""
