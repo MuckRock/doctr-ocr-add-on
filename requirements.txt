@@ -19,5 +19,5 @@ shapely
 tqdm
 unidecode
 weasyprint
-torch=="2.0.1+cpu"
+torch==2.0.1+cpu
 python-doctr[torch]
