@@ -6,5 +6,4 @@ jobs:
   Run-Add-On:
     uses: MuckRock/documentcloud-addon-workflows/.github/workflows/run-addon.yml@cache
     with:
-      cache: pip
       timeout: 60
