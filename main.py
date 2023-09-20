@@ -29,7 +29,6 @@ class docTR(AddOn):
                         "ocr": "doctr",
                         "positions": [],
                     }
-                    print(f"Page {page_idx}:")
                     for block in page['blocks']:
                         for line in block['lines']:
                             line_text = ""
@@ -37,9 +36,6 @@ class docTR(AddOn):
                                 line_text += word['value'] + ' '
                                 word_value = word['value']
                                 word_bounding_box = word['geometry']
-                                print(f"Word: {word_value}")
-                                print(f"Bounding Box: {word_bounding_box}")
-        
                                 x1 = word_bounding_box[0][0]
                                 y1 = word_bounding_box[0][1]
                                 x2 = word_bounding_box[1][0]
