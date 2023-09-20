@@ -46,10 +46,10 @@ class docTR(AddOn):
                                 y2 = word_bounding_box[1][1]
                                 position_info = {
                                     "text": word_value,
-                                    "x1": x1,
-                                    "x2": x2,
-                                    "y1": y1,
-                                    "y2": y2,
+                                    "x1": float(x1),
+                                    "x2": float(x2),
+                                    "y1": float(y1),
+                                    "y2": float(y2),
                                 }
                                 dc_page["positions"].append(position_info)
                             text += line_text.strip() + '\n'
