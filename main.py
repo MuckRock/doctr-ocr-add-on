@@ -26,7 +26,7 @@ class docTR(AddOn):
                     dc_page = {
                         "page_number": page_idx,
                         "text": text,
-                        "ocr": "docTR",
+                        "ocr": "doctr",
                         "positions": [],
                     }
                     print(f"Page {page_idx}:")
