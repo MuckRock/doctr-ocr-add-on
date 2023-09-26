@@ -40,14 +40,15 @@ class docTR(AddOn):
                                 y1 = word_bounding_box[0][1]
                                 x2 = word_bounding_box[1][0]
                                 y2 = word_bounding_box[1][1]
-                                position_info = {
-                                    "text": word_value,
-                                    "x1": float(x1),
-                                    "x2": float(x2),
-                                    "y1": float(y1),
-                                    "y2": float(y2),
-                                }
-                                dc_page["positions"].append(position_info)
+                                if word['value']:
+                                    position_info = {
+                                        "text": word_value,
+                                        "x1": float(x1),
+                                        "x2": float(x2),
+                                        "y1": float(y1),
+                                        "y2": float(y2),
+                                    }
+                                    dc_page["positions"].append(position_info)
                             text += line_text.strip() + '\n'
                         text += '\n'
                     dc_page['text'] = text
