@@ -11,6 +11,9 @@ class docTR(AddOn):
 
     def main(self):
         """The main add-on functionality goes here."""
+        if self.get_document_count() is None:
+            self.set_message("Please select at least one document.")
+            return
         model = ocr_predictor('db_resnet50_rotation', 'crnn_vgg16_bn', pretrained=True, assume_straight_pages=False, export_as_straight_boxes=True)
         for document in self.get_documents():
             pdf_name = f"'{document.id}.pdf'"
