@@ -62,7 +62,7 @@ class docTR(AddOn):
                     resp = self.client.patch(f"documents/{document.id}/", json={"pages": chunk})
                     resp.raise_for_status()
                     while True:
-                        time.sleep(10)
+                        time.sleep(15)
                         if document.status == "success": # Break out of for loop if document status becomes success
                             break
                 
