@@ -11,6 +11,7 @@ class docTR(AddOn):
 
     def main(self):
         """The main add-on functionality goes here."""
+        to_tag=self.data.get("to_tag", False)
         if self.get_document_count() is None:
             self.set_message("Please select at least one document.")
             return
@@ -65,6 +66,8 @@ class docTR(AddOn):
                         time.sleep(15)
                         if document.status == "success": # Break out of for loop if document status becomes success
                             break
-                
+            if to_tag:
+                document.data["ocr_engine"]="doctr"
+                document.save()
 if __name__ == "__main__":
     docTR().main()

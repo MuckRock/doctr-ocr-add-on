@@ -4,7 +4,11 @@ instructions: ''
 type: object
 documents:
   - selected
-properties: {}
+properties:
+  to_tag:
+    title: Tag OCR'd documents?
+    type: boolean
+    description: "If selected, the key/value pair of ocr_engine:doctr will be added to the document as metadata"
 categories: 
   - extraction
 # Acceptable categories are premium, ai, export, bulk, file,  monitor, statistical, and extraction. 
