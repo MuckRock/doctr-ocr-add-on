@@ -63,8 +63,9 @@ class docTR(AddOn):
                     resp = self.client.patch(f"documents/{document.id}/", json={"pages": chunk})
                     resp.raise_for_status()
                     while True:
+                        document_ref = self.client.documents.get(document.id)
                         time.sleep(15)
-                        if document.status == "success": # Break out of for loop if document status becomes success
+                        if document_ref.status == "success": # Break out of for loop if document status becomes success
                             break
             if to_tag:
                 document.data["ocr_engine"]="doctr"
