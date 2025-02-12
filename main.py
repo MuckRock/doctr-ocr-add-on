@@ -57,7 +57,7 @@ class docTR(AddOn):
                         text += '\n'
                     dc_page['text'] = text
                     pages.append(dc_page)
-                page_chunk_size = 100  # Set your desired chunk size
+                page_chunk_size = 20  # Max allowed by the API
                 for i in range(0, len(pages), page_chunk_size):
                     chunk = pages[i:i + page_chunk_size]
                     resp = self.client.patch(f"documents/{document.id}/", json={"pages": chunk})
