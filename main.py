@@ -11,6 +11,7 @@ class docTR(AddOn):
 
     def main(self):
         """The main add-on functionality goes here."""
+        self.client.session.headers.update({'User-Agent': 'docTR OCR Add-On'})
         to_tag=self.data.get("to_tag", False)
         if self.get_document_count() is None:
             self.set_message("Please select at least one document.")
