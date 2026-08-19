@@ -67,7 +67,7 @@ class Doctr(AddOn):
                 print("Tagging document...")
                 self.client.patch(
                     f"documents/{document.id}/",
-                    json={"data": {"ocr_engine": ["azure"]}},
+                    json={"data": {"ocr_engine": ["docTR"]}},
                 )
                 print("Finished tagging document")
                 return
