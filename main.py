@@ -65,9 +65,10 @@ class Doctr(AddOn):
         while retries < max_retries:
             try:
                 print("Tagging document...")
+                existing = document.data.get("ocr_engine", [])
                 self.client.patch(
-                    f"documents/{document.id}/",
-                    json={"data": {"ocr_engine": ["docTR"]}},
+                    f"documents/{document.id}/data/ocr_engine/",
+                    json={"values": ["docTR"], "remove": existing},
                 )
                 print("Finished tagging document")
                 return
